@@ -1,5 +1,7 @@
 // Copyright 2022 UNN-IASR
 #include "fun.h"
+#include <string.h>
+#include <iostream>
 
 unsigned int faStr1(const char *str) {
 int count_digits = 0;
