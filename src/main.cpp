@@ -1,12 +1,13 @@
 // Copyright 2022 UNN-IASR
-#include "fun.h"
 #include<iostream>
 #include<string>
+#include "fun.h"
 
 int main() {
 setlocale(LC_ALL, "1251");
 
-const char* s1 = "один д2ва три че4тыре пят5ь шесть сем7ь восемь девять дес10ять";
+const char* s1 = 
+"один д2ва три че4тыре пят5ь шесть сем7ь восемь девять дес10ять";
 
 /*
 * ФУНКЦИЯ 1:
