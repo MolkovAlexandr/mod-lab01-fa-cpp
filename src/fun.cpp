@@ -19,23 +19,26 @@ count_digits = 0;
 return count_words;
 }
 
-unsigned int faStr2(const char *str) {
-int count_lowercase = 0;
+unsigned int faStr2(const char* str) {
 int count_words = 0;
-bool fits = false;
+bool fits = true;
+bool capital = false;
 
 for (int i = 0; i < strlen(str); i++) {
-if (str[i - 1] == ' ' || i == 0) {
-if (str[i] > 64 && str[i] < 91) {
-fits = true;
+if ((str[i] <= 96 || str[i] >= 123) && str[i] != ' ')fits = false;
+if (str[i] > 64 && str[i] < 91 && (str[i - 1] == ' ' || i == 0)) { capital = true; fits = true; }
+
+if (str[i] == ' ' || i == strlen(str) - 1) {
+if (!(((str[i] == ' ' && str[i - 1] == ' ' && i != 0)) || (str[i] == ' ' && i == 0))) {
 count_words++;
-} else fits = false;
+if (!(fits && capital))count_words--;
+fits = true;
+capital = false;
+}
+}
 }
 
-if (fits && str[i] > 96 && str[i] < 123)count_lowercase++;
-}
-
-return count_lowercase;
+return count_words;
 }
 
 unsigned int faStr3(const char *str) {
