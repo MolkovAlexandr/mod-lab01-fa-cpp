@@ -11,7 +11,7 @@ for (int i = 0; i < strlen(str); i++) {
 if (str[i] > 47 && str[i] < 58)count_digits++;
 
 if (str[i] == ' ' || i == strlen(str) - 1) {
-if (count_digits == 0 && !(((str[i] == ' ' && str[i - 1] == ' ' && i != 0)) 
+if (count_digits == 0 && !(((str[i] == ' ' && str[i - 1] == ' ' && i != 0))
 || (str[i] == ' ' && i == 0)))count_words++;
 count_digits = 0;
 }
@@ -28,11 +28,11 @@ bool capital = false;
 for (int i = 0; i < strlen(str); i++) {
 if ((str[i] <= 96 || str[i] >= 123) && str[i] != ' ')fits = false;
 if (str[i] > 64 && str[i] < 91 && (str[i - 1] == ' ' || i == 0)) {
-capital = true; fits = true; 
+capital = true; fits = true;
 }
 
 if (str[i] == ' ' || i == strlen(str) - 1) {
-if (!(((str[i] == ' ' && str[i - 1] == ' ' && i != 0)) 
+if (!(((str[i] == ' ' && str[i - 1] == ' ' && i != 0))
 || (str[i] == ' ' && i == 0))) {
 count_words++;
 if (!(fits && capital))count_words--;
@@ -50,7 +50,7 @@ double count_symbols = 0;
 double count_words = 0;
 
 for (int i = 0; i < strlen(str); i++) {
-if (i > 0 && str[i - 1] != ' ' && str[i] == ' ' || 
+if (i > 0 && str[i - 1] != ' ' && str[i] == ' ' ||
 (i == strlen(str) - 1 && str[i] != ' '))count_words++;
 if (str[i] != ' ')count_symbols++;
 }
